@@ -8,23 +8,27 @@
 
 /* Begin PBXBuildFile section */
 		403BD8D322592E70009E2310 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 403BD8D222592E70009E2310 /* main.cpp */; };
+		404730B7225947DA0018EC0C /* Info.plist in CopyFiles */ = {isa = PBXBuildFile; fileRef = 404730B6225947130018EC0C /* Info.plist */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		403BD8CD22592E70009E2310 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1/;
-			dstSubfolderSpec = 0;
+			buildActionMask = 12;
+			dstPath = "";
+			dstSubfolderSpec = 16;
 			files = (
+				404730B7225947DA0018EC0C /* Info.plist in CopyFiles */,
 			);
-			runOnlyForDeploymentPostprocessing = 1;
+			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		403BD8CF22592E70009E2310 /* ttcv */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ttcv; sourceTree = BUILT_PRODUCTS_DIR; };
 		403BD8D222592E70009E2310 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		404730B4225943F60018EC0C /* 100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 100.png; sourceTree = "<group>"; };
+		404730B6225947130018EC0C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +47,7 @@
 			children = (
 				403BD8D122592E70009E2310 /* ttcv */,
 				403BD8D022592E70009E2310 /* Products */,
+				404730B32259433C0018EC0C /* images */,
 			);
 			sourceTree = "<group>";
 		};
@@ -57,9 +62,18 @@
 		403BD8D122592E70009E2310 /* ttcv */ = {
 			isa = PBXGroup;
 			children = (
+				404730B6225947130018EC0C /* Info.plist */,
 				403BD8D222592E70009E2310 /* main.cpp */,
 			);
 			path = ttcv;
+			sourceTree = "<group>";
+		};
+		404730B32259433C0018EC0C /* images */ = {
+			isa = PBXGroup;
+			children = (
+				404730B4225943F60018EC0C /* 100.png */,
+			);
+			path = images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -240,6 +254,57 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				"HEADER_SEARCH_PATHS[arch=*]" = "/usr/local/Cellar/opencv@3/3.4.5/include";
+				INFOPLIST_FILE = "$(SRCROOT)/ttcv/Info.plist";
+				"LIBRARY_SEARCH_PATHS[arch=*]" = "/usr/local/Cellar/opencv@3/3.4.5/lib";
+				"OTHER_LDFLAGS[arch=*]" = (
+					"-I/usr/local/Cellar/opencv@3/3.4.5/include/opencv",
+					"-I/usr/local/Cellar/opencv@3/3.4.5/include",
+					"-L/usr/local/Cellar/opencv@3/3.4.5/lib",
+					"-lopencv_stitching",
+					"-lopencv_superres",
+					"-lopencv_videostab",
+					"-lopencv_aruco",
+					"-lopencv_bgsegm",
+					"-lopencv_bioinspired",
+					"-lopencv_ccalib",
+					"-lopencv_dnn_objdetect",
+					"-lopencv_dpm",
+					"-lopencv_face",
+					"-lopencv_fuzzy",
+					"-lopencv_hfs",
+					"-lopencv_img_hash",
+					"-lopencv_line_descriptor",
+					"-lopencv_optflow",
+					"-lopencv_reg",
+					"-lopencv_rgbd",
+					"-lopencv_saliency",
+					"-lopencv_stereo",
+					"-lopencv_structured_light",
+					"-lopencv_phase_unwrapping",
+					"-lopencv_surface_matching",
+					"-lopencv_tracking",
+					"-lopencv_datasets",
+					"-lopencv_dnn",
+					"-lopencv_plot",
+					"-lopencv_xfeatures2d",
+					"-lopencv_shape",
+					"-lopencv_video",
+					"-lopencv_ml",
+					"-lopencv_ximgproc",
+					"-lopencv_xobjdetect",
+					"-lopencv_objdetect",
+					"-lopencv_calib3d",
+					"-lopencv_features2d",
+					"-lopencv_highgui",
+					"-lopencv_videoio",
+					"-lopencv_imgcodecs",
+					"-lopencv_flann",
+					"-lopencv_xphoto",
+					"-lopencv_photo",
+					"-lopencv_imgproc",
+					"-lopencv_core",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -248,6 +313,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "$(SRCROOT)/ttcv/Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:ttcv.xcodeproj">
+      location = "group:/Users/quantummob/repos/ttcv/ttcv/images">
+   </FileRef>
+   <FileRef
+      location = "self:">
    </FileRef>
 </Workspace>
